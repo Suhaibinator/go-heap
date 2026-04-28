@@ -15,7 +15,7 @@ used by `time.Time.Compare`, `netip.Addr.Compare`, `cmp.Compare`, and
 import heap "github.com/Suhaibinator/go-heap"
 ```
 
-Requires Go 1.26.2+ (uses `iter.Seq`).
+Requires Go 1.23+ (uses `iter.Seq`).
 
 ## The interface
 
