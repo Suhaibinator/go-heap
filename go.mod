@@ -1,3 +1,3 @@
 module github.com/Suhaibinator/go-heap
 
-go 1.26.2
+go 1.23
