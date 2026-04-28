@@ -4,7 +4,7 @@ import (
 	"cmp"
 	"fmt"
 
-	heap "github.com/Suhaibinator/go-heap"
+	heap "github.com/Suhaibinator/go-heap/heap"
 )
 
 // Priority is a primitive wrapper that satisfies heap.Ordered[Priority].
