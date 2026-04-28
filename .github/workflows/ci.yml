@@ -49,7 +49,12 @@ jobs:
       - name: go test
         run: go test -race -coverprofile=coverage.out -covermode=atomic ./...
 
-      - name: Upload coverage
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload coverage artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -67,12 +72,16 @@ jobs:
         with:
           go-version-file: go.mod
           check-latest: true
-          cache: false # golangci-lint-action manages its own cache
+          cache: true
 
-      - uses: golangci/golangci-lint-action@v6
-        with:
-          version: latest
-          args: --timeout=5m
+      # Build golangci-lint from source with the project's Go toolchain so the
+      # linter binary supports whatever Go version go.mod targets. Prebuilt
+      # binaries lag the latest Go release and refuse to analyze newer code.
+      - name: Install golangci-lint
+        run: go install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@latest
+
+      - name: Run golangci-lint
+        run: golangci-lint run --timeout=5m ./...
 
   vuln:
     name: govulncheck

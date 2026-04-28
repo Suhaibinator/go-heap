@@ -1,6 +1,7 @@
 # go-heap
 
 [![CI](https://github.com/Suhaibinator/go-heap/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Suhaibinator/go-heap/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/Suhaibinator/go-heap/graph/badge.svg)](https://codecov.io/gh/Suhaibinator/go-heap)
 [![Go Reference](https://pkg.go.dev/badge/github.com/Suhaibinator/go-heap.svg)](https://pkg.go.dev/github.com/Suhaibinator/go-heap)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Suhaibinator/go-heap)](https://goreportcard.com/report/github.com/Suhaibinator/go-heap)
 [![License: MIT](https://img.shields.io/github/license/Suhaibinator/go-heap)](LICENSE)
